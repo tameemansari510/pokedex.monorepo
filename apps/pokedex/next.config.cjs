@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "standalone", // ✅ THIS enables the .next/standalone folder
+  output: "standalone",
   reactStrictMode: true,
   transpilePackages: ["@monorepo/utils", "@monorepo/components"],
   experimental: {

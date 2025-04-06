@@ -8,7 +8,7 @@ import prettierConfig from "eslint-config-prettier";
 export default [
   js.configs.recommended,
   ...tseslint.configs.recommended,
-  prettierConfig, // Disables conflicting ESLint rules with Prettier
+  prettierConfig,
   {
     files: ["**/*.tsx", "**/*.ts"],
     ignores: ["**/dist/**", "**/node_modules/**"],
@@ -24,10 +24,7 @@ export default [
       prettier: prettierPlugin,
     },
     rules: {
-      // React rule override
       "react/react-in-jsx-scope": "off",
-
-      // Unused import/var cleanup
       "no-unused-vars": "off",
       "@typescript-eslint/no-unused-vars": "off",
       "unused-imports/no-unused-imports": "warn",
@@ -40,8 +37,6 @@ export default [
           argsIgnorePattern: "^_",
         },
       ],
-
-      // Prettier as an ESLint rule
       "prettier/prettier": "warn",
     },
   },

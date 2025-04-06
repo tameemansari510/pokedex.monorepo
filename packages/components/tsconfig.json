@@ -8,7 +8,7 @@
     "emitDeclarationOnly": false,
     "module": "ESNext",
     "target": "ESNext",
-    "jsx": "react-jsx",          // ✅ Ensures .js + proper JSX handling
+    "jsx": "react-jsx",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",

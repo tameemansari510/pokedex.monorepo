@@ -7,7 +7,7 @@ import prettierConfig from "eslint-config-prettier";
 export default [
   js.configs.recommended,
   ...tseslint.configs.recommended,
-  prettierConfig, // disables ESLint rules that conflict with Prettier
+  prettierConfig,
 
   {
     files: ["**/*.ts"],
@@ -23,11 +23,8 @@ export default [
       prettier: prettierPlugin,
     },
     rules: {
-      // Turn off default unused vars rules
       "no-unused-vars": "off",
       "@typescript-eslint/no-unused-vars": "off",
-
-      // Unused imports/vars cleanup
       "unused-imports/no-unused-imports": "warn",
       "unused-imports/no-unused-vars": [
         "warn",
@@ -38,8 +35,6 @@ export default [
           argsIgnorePattern: "^_",
         },
       ],
-
-      // Enable Prettier formatting as lint rule
       "prettier/prettier": "warn",
     },
   },

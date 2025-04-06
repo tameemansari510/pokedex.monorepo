@@ -17,7 +17,7 @@ export default [
   },
   js.configs.recommended,
   ...tseslint.configs.recommended,
-  prettierConfig, // Disables ESLint rules that conflict with Prettier
+  prettierConfig,
   {
     files: ["**/*.ts", "**/*.tsx"],
     languageOptions: {
@@ -43,8 +43,6 @@ export default [
       "@typescript-eslint/no-unused-vars": "warn",
       "@typescript-eslint/no-explicit-any": "off",
       "no-undef": "off",
-
-      // Prettier rule to enforce formatting
       "prettier/prettier": "warn",
     },
   },
