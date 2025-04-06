@@ -1,0 +1,28 @@
+# Ignore node_modules everywhere
+**/node_modules
+
+# Next.js build caches
+**/.next
+**/dist
+
+# Version control
+.git
+.gitignore
+
+# Logs and temp files
+*.md
+*.log
+.DS_Store
+
+# Local environment files
+.env*
+
+# Debug compose files
+docker-compose.debug.yml
+
+# Docker files
+.dockerignore
+Dockerfile
+
+# allow .npmrc
+!.npmrc

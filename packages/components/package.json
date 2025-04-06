@@ -1,0 +1,17 @@
+{
+  "name": "@monorepo/components",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc --build tsconfig.json",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --fix",
+    "check-types": "tsc --noEmit"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@mui/material": "^5.14.0"
+  }
+}

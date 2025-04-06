@@ -1,0 +1,55 @@
+# Node dependencies
+node_modules/
+packages/*/node_modules/
+
+# Build output
+dist/
+packages/*/dist/
+.next/
+out/
+
+# Storybook static build
+storybook-static/
+packages/*/storybook-static/
+
+# Logs
+*.log
+yarn-error.log
+npm-debug.log
+lerna-debug.log
+
+# Local env files
+.env*
+!.env.example
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# TypeScript
+*.tsbuildinfo
+
+# Docker
+*.local
+docker-compose.override.yml
+
+# Yarn
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+.yarnrc.yml
+
+# Coverage
+coverage/
+packages/*/coverage/
+
+# Misc
+*.swp
+*.swo
+.npmrc
