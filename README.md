@@ -75,6 +75,14 @@ To check for type errors:
 yarn check-types
 ```
 
+## Storybook
+
+To run story book for the components:
+
+```sh
+yarn storybook
+```
+
 ## Dockerization
 
 To build application via docker:
@@ -90,5 +98,3 @@ yarn docker:up
 ```
 
 Note: Running application via docker has some limitation. It is dependendant on .npmrc file which has access token to jfrog to install dependencies in the container. In near future docker steps will be removed from this application.
-
-
