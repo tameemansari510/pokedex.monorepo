@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { PokemonCard } from "@monorepo/components";
+import { capitalize, formatHeight, formatWeight } from "@monorepo/utils";
 import React from "react";
 import { Button, Box } from "@mui/material";
 
@@ -33,10 +34,10 @@ export default function PokemonDetail() {
     >
       <Box sx={{ maxWidth: 400, width: "100%" }}>
         <PokemonCard
-          name={data.name}
+          name={capitalize(data.name)}
           imageUrl={data.sprites.front_default}
-          height={data.height}
-          weight={data.weight}
+          height={+formatHeight(data.height)}
+          weight={+formatWeight(data.weight)}
           baseExperience={data.base_experience}
         />
       </Box>

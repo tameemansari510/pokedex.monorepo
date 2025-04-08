@@ -53,3 +53,4 @@ packages/*/coverage/
 *.swp
 *.swo
 .npmrc
+*storybook.log

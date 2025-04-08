@@ -16,12 +16,22 @@
     "docker:up": "docker-compose up",
     "docker:down": "docker-compose down",
     "docker:logs": "docker-compose logs -f",
-    "docker:restart": "docker-compose restart"
+    "docker:restart": "docker-compose restart",
+    "storybook": "yarn workspace @monorepo/components storybook",
+    "build-storybook": "yarn workspace @monorepo/components build-storybook"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.24.0",
     "@next/eslint-plugin-next": "^15.2.4",
+    "@storybook/addon-essentials": "^8.6.12",
+    "@storybook/addon-interactions": "^8.6.12",
+    "@storybook/addon-onboarding": "^8.6.12",
+    "@storybook/addon-webpack5-compiler-swc": "^3.0.0",
+    "@storybook/blocks": "^8.6.12",
+    "@storybook/react": "^8.6.12",
+    "@storybook/react-webpack5": "^8.6.12",
+    "@storybook/test": "^8.6.12",
     "@types/node": "^22.14.0",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.1",
@@ -31,11 +41,17 @@
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-prettier": "^5.2.6",
     "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-storybook": "^0.12.0",
     "eslint-plugin-unused-imports": "^4.1.4",
     "lerna": "^7.3.1",
     "prettier": "^3.5.3",
-    "typescript": "5.5",
-    "typescript-eslint": "^7.7.0"
+    "storybook": "^8.6.12",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^7.7.0",
+    "concurrently": "^8.2.2",
+    "serve": "^14.2.0"
+
   },
   "dependencies": {
     "@emotion/react": "^11.11.0",
@@ -43,5 +59,10 @@
     "@mui/material": "^5.14.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
   }
 }

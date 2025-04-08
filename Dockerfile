@@ -17,8 +17,9 @@ RUN yarn install --frozen-lockfile --network-timeout 1000000
 
 COPY . .
 
-# ✅ Use only yarn build (uses the root script)
 RUN yarn build
+
+RUN yarn workspace @monorepo/components build-storybook
 
 # -------------------------------
 # Stage 2: Runner
@@ -28,17 +29,16 @@ FROM node:18-alpine AS runner
 WORKDIR /app
 
 COPY --from=builder /monorepo/apps/pokedex/package.json ./
-# COPY --from=builder /monorepo/apps/pokedex/public ./public
 COPY --from=builder /monorepo/apps/pokedex/.next ./.next
 COPY --from=builder /monorepo/apps/pokedex/next.config.cjs ./
-
-# COPY --from=builder /monorepo/packages/utils/dist ./node_modules/@monorepo/utils
-# COPY --from=builder /monorepo/packages/components/dist ./node_modules/@monorepo/components
-
-# RUN yarn install --production --frozen-lockfile
 COPY --from=builder /monorepo/node_modules ./node_modules
+COPY --from=builder /monorepo/packages/components/storybook-static ./storybook-static
+
+RUN yarn global add serve
+RUN yarn global add concurrently
 
 ENV NODE_ENV=production
 EXPOSE 3000
+EXPOSE 6006
 
-CMD ["yarn", "start"]
+CMD concurrently "yarn start" "serve ./storybook-static -l 6006"
