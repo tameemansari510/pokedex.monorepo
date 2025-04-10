@@ -11,7 +11,12 @@ export default [
   prettierConfig,
   {
     files: ["**/*.tsx", "**/*.ts"],
-    ignores: ["**/dist/**", "**/node_modules/**"],
+    ignores: [
+      "**/dist/**",
+      "**/node_modules/**",
+      "**/.storybook/**",
+      "**/*.stories.tsx",
+    ],
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
